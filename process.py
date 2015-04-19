@@ -1,7 +1,7 @@
-import simplejson as json
-import urllib, csv
+#import simplejson as json
+import json, urllib, csv
 
-key = '6484813f180d34c35df3e62adf2e57459f60a566'
+key = json.loads(open('key.json').read())['key']
 VAR_LIMIT = 50
 
 def run_each(year):
@@ -36,12 +36,12 @@ def run_each(year):
 		if land_area[d] == 0:
 			del land_area[d]
 	cluster_count['polygon_count'] = sum([len(polygons[l]) for l in polygons])
-
 	return cluster_count, polygons, land_area
 
 def sort_polygons(polygons):
 	sorted_polys = {}
 	for d in polygons:
+		print d
 		sorted_polys[d] = {}
 		for tract in sorted(polygons[d]):
 			if tract[:2] not in sorted_polys[d]:
@@ -52,31 +52,39 @@ def sort_polygons(polygons):
 				sorted_polys[d][tract[:2]][tract[2:5]].append(tract[5:])
 	return sorted_polys
 
-def get_data_2011(variables, polygons):
+def get_data(url,variables, polygons):
 	full_vars = {}
 	for var in variables:
-		request = 'http://api.census.gov/data/2010/acs5/variables/%s.json' %(var)
+		request = url+'/variables/%s.json' %(var)
 		try:
-			data = json.loads(urllib.urlopen(request).read())
+			raw = urllib.urlopen(request).read()
+			data = json.loads(raw)
 		except:
 			print "%s not found..." %(var)
 			continue
 		full_vars[var] = {'label':data['label'], 'concept':data['concept'],'total':0}
 		for d in polygons:
 			full_vars[var][d] = 0
-
 	poly_map = sort_polygons(polygons)
 
 	#get all states first
 	data = None
 	i = 0
 	for j in range(min(len(full_vars.keys()),VAR_LIMIT-1),len(full_vars.keys()),VAR_LIMIT-1)+[len(full_vars.keys())]:
-		request = 'http://api.census.gov/data/2010/acs5?key=%s&get=%s,NAME&for=state:*' %(key,','.join(full_vars.keys()[i:j]))
+		request = url+'?key=%s&get=%s,NAME&for=state:*' %(key,','.join(full_vars.keys()[i:j]))
 		i = j
 		try:
-			temp_data = json.loads(urllib.urlopen(request).read())
+			while True:
+				raw = 'Not online'
+				raw = urllib.urlopen(request).read()
+				if raw == 'Sorry, the system is currently undergoing maintenance or is busy.  Please try again later.':
+					time.sleep(5)
+					print 'waiting...',
+				else:
+					break
+			temp_data = json.loads(raw)
 		except:
-			print 'alert:',temp_data
+			print 'alert:', raw
 			print 'request:', request
 			print i, j, full_vars
 			break
@@ -102,85 +110,93 @@ def get_data_2011(variables, polygons):
 	for d in poly_map:
 		for state, counties in poly_map[d].iteritems():
 			for county, tracts in counties.iteritems():
-				data = []
-				i = 0
-				for j in range(min(len(full_vars.keys()),VAR_LIMIT-1),len(full_vars.keys()),VAR_LIMIT-1)+[len(full_vars.keys())]:
-					request = 'http://api.census.gov/data/2010/acs5?key=%s&get=%s,NAME&for=tract:%s&in=state:%s,county:%s' %(key,','.join(full_vars.keys()[i:j]),','.join(tracts),state,county)
-					i = j
-					try:
-						temp_data = json.loads(urllib.urlopen(request).read())
-					except:
-						print 'alert:', temp_data
-						print 'request:', request
-						break
-					if not data:
-						data = temp_data
-					else:
-						for k in range(len(temp_data)):
-							data[k].extend(temp_data[k])
-				#print data
-				for var_index in range(len(data[0])):
-					if data[0][var_index] in ['NAME','state','county','tract']:
-						continue
-					for row in range(1,len(data)):
-						try: 
-							full_vars[data[0][var_index]][d] += int(data[row][var_index])
+				for tract in tracts:
+					data = []
+					i = 0
+					for j in range(min(len(full_vars.keys()),VAR_LIMIT-1),len(full_vars.keys()),VAR_LIMIT-1)+[len(full_vars.keys())]:
+						request = url+'?key=%s&get=%s,NAME&for=tract:%s&in=state:%s,county:%s' %(key,','.join(full_vars.keys()[i:j]),tract,state,county)
+						i = j
+						try:
+							while True:
+								raw = urllib.urlopen(request).read()
+								if raw.strip() == 'Sorry, the system is currently undergoing maintenance or is busy.  Please try again later.':
+									time.sleep(5)
+									print 'waiting...',
+								else:
+									break
+							temp_data = json.loads(raw)
 						except:
-							if data[row][var_index]:
-								print 'INT issue at line 125,',var_index,'data row:',data[row]
+							print 'alert:', raw
+							print 'request:', request
+							break
+						if not data:
+							data = temp_data
+						else:
+							for k in range(len(temp_data)):
+								data[k].extend(temp_data[k])
+					#print data
+					for var_index in range(len(data[0])):
+						if data[0][var_index] in ['NAME','state','county','tract']:
 							continue
+						for row in range(1,len(data)):
+							try: 
+								full_vars[data[0][var_index]][d] += int(data[row][var_index])
+							except:
+								if data[row][var_index]:
+									print 'INT issue at line 125,',var_index,'data row:',data[row]
+								continue
 	return full_vars
 
-def main():
-	stats_01, results_01, land_area_01 = run_each('01')
-	with open('2001/cluster_stats.csv', 'wb') as csvfile:
+def get_data_2000(variables, polygons):
+	return get_data('http://api.census.gov/data/2000/sf3',variables,polygons)
+def get_data_2011(variables, polygons):
+	return get_data('http://api.census.gov/data/2010/acs5',variables,polygons)
+
+def csv_output(folder,variables,stats,results,land_area,totals=None):
+	print 'start CSV'
+	with open(folder+'/cluster_stats.csv', 'wb') as csvfile:
 		csvwriter = csv.writer(csvfile)
-		for key in sorted(stats_01):
-			csvwriter.writerow([key, stats_01[key]])
-
-	stats_11, results_11, land_area_11 = run_each('11')
-	with open('2011/cluster_stats.csv', 'wb') as csvfile:
-		csvwriter = csv.writer(csvfile)
-		for key in sorted(stats_11):
-			csvwriter.writerow([key, stats_11[key]])
-
-	vars_11 = json.loads(open('2010acs5elements.json').read())
-	#for group in vars_11:
-	group = "basics"
-	totals_11 = get_data_2011(vars_11[group],results_11)
-	with open('2011/'+group+'.csv', 'wb') as csvfile:
-		csvwriter = csv.writer(csvfile)
-		for key in totals_11:
-			csvwriter.writerow([str(key+' : '+totals_11[key]['concept']+' : '+totals_11[key]['label'])])
-			csvwriter.writerow([dist for dist in sorted(totals_11[key]) if dist not in ['concept', 'label'] ])
-			csvwriter.writerow([totals_11[key][dist] for dist in sorted(totals_11[key]) if dist not in ['concept', 'label']])
-			csvwriter.writerow([])
-		if group == 'basics':
-			csvwriter.writerow(["ALAND10 : 2010 Census land area (square meters)"])
-			csvwriter.writerow([dist for dist in sorted(totals_11[key]) if dist not in ['concept', 'label'] ])
-			csvwriter.writerow([land_area_11[dist] for dist in sorted(totals_11[key]) if dist not in ['concept', 'label','total']]+[9158021763139])
-
-
-	stats_11_135, results_11_135, land_area_11_135 = run_each('11-135')
-	with open('2011/cluster_stats.csv', 'wb') as csvfile:
-		csvwriter = csv.writer(csvfile)
-		for key in sorted(stats_11_135):
-			csvwriter.writerow([key, stats_11_135[key]])
-
-	for group in vars_11:
-		totals_11_135 = get_data_2011(vars_11[group],results_11_135)
-		with open('2011/135/'+group+'.csv', 'wb') as csvfile:
+		for key in sorted(stats):
+			csvwriter.writerow([key, stats[key]])
+	new = False
+	if not totals:
+		totals = {}
+		new = True
+	for group in variables:
+		if new:
+			if folder[2] == '1':
+				totals[group] = get_data_2011(variables[group],results)
+			if folder[2] == '0':
+				totals[group] = get_data_2000(variables[group],results)
+				print totals[group]
+		with open(folder+'/'+group+'.csv', 'wb') as csvfile:
 			csvwriter = csv.writer(csvfile)
-			for key in totals_11_135:
-				csvwriter.writerow([str(key+' : '+totals_11_135[key]['concept']+' : '+totals_11_135[key]['label'])])
-				csvwriter.writerow([dist for dist in sorted(totals_11_135[key]) if dist not in ['concept', 'label'] ])
-				csvwriter.writerow([totals_11_135[key][dist] for dist in sorted(totals_11_135[key]) if dist not in ['concept', 'label']])
+			for key in totals[group]:
+				print [dist for dist in sorted(totals[group][key]) if dist not in ['concept', 'label'] ]
+				csvwriter.writerow([str(key+' : '+totals[group][key]['concept']+' : '+totals[group][key]['label'])])
+				csvwriter.writerow([dist for dist in sorted(totals[group][key]) if dist not in ['concept', 'label'] ])
+				csvwriter.writerow([totals[group][key][dist] for dist in sorted(totals[group][key]) if dist not in ['concept', 'label']])
 				csvwriter.writerow([])
 			if group == 'basics':
 				csvwriter.writerow(["ALAND10 : 2010 Census land area (square meters)"])
-				csvwriter.writerow([dist for dist in sorted(totals_11_135[key]) if dist not in ['concept', 'label'] ])
-				csvwriter.writerow([land_area_11_135.get(dist,None) for dist in sorted(totals_11_135[key]) if dist not in ['concept', 'label','total']]+[9158021763139])
+				csvwriter.writerow([dist for dist in sorted(totals[group][key]) if dist not in ['concept', 'label'] ])
+				csvwriter.writerow([land_area[dist] for dist in sorted(totals[group][key]) if dist not in ['concept', 'label','total']]+[9158021763139])
+	return totals
 
+def main():
+	#stats_00, results_00, land_area_00 = run_each('01')
+	vars_00 = json.loads(open('2000longformelements.json').read())
+	#totals_00 = csv_output('2001/3',vars_00,stats_00,results_00,land_area_00)
+
+	stats_00_135, results_00_135, land_area_00_135 = run_each('01-135')
+	csv_output('2001/135',vars_00,stats_00_135,results_00_135,land_area_00_135)
+'''
+	stats_11, results_11, land_area_11 = run_each('11')
+	vars_11 = json.loads(open('2010acs5elements.json').read())
+	totals_11 = csv_output('2011/3',vars_11,stats_11,results_11,land_area_11)
+	
+	stats_11_135, results_11_135, land_area_11_135 = run_each('11-135')
+	csv_output('2011/135',vars_11,stats_11_135,results_11_135,land_area_11_135,totals_11)'''
 
 if __name__ == '__main__':
 	main()
