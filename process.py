@@ -41,7 +41,6 @@ def run_each(year):
 def sort_polygons(polygons):
 	sorted_polys = {}
 	for d in polygons:
-		print d
 		sorted_polys[d] = {}
 		for tract in sorted(polygons[d]):
 			if tract[:2] not in sorted_polys[d]:
@@ -134,7 +133,6 @@ def get_data(url,variables, polygons):
 						else:
 							for k in range(len(temp_data)):
 								data[k].extend(temp_data[k])
-					#print data
 					for var_index in range(len(data[0])):
 						if data[0][var_index] in ['NAME','state','county','tract']:
 							continue
@@ -172,7 +170,6 @@ def csv_output(folder,variables,stats,results,land_area,totals=None):
 		with open(folder+'/'+group+'.csv', 'wb') as csvfile:
 			csvwriter = csv.writer(csvfile)
 			for key in totals[group]:
-				print [dist for dist in sorted(totals[group][key]) if dist not in ['concept', 'label'] ]
 				csvwriter.writerow([str(key+' : '+totals[group][key]['concept']+' : '+totals[group][key]['label'])])
 				csvwriter.writerow([dist for dist in sorted(totals[group][key]) if dist not in ['concept', 'label'] ])
 				csvwriter.writerow([totals[group][key][dist] for dist in sorted(totals[group][key]) if dist not in ['concept', 'label']])
@@ -184,19 +181,19 @@ def csv_output(folder,variables,stats,results,land_area,totals=None):
 	return totals
 
 def main():
-	#stats_00, results_00, land_area_00 = run_each('01')
+	stats_00, results_00, land_area_00 = run_each('01')
 	vars_00 = json.loads(open('2000longformelements.json').read())
-	#totals_00 = csv_output('2001/3',vars_00,stats_00,results_00,land_area_00)
+	totals_00 = csv_output('2001/3',vars_00,stats_00,results_00,land_area_00)
 
 	stats_00_135, results_00_135, land_area_00_135 = run_each('01-135')
 	csv_output('2001/135',vars_00,stats_00_135,results_00_135,land_area_00_135)
-'''
+
 	stats_11, results_11, land_area_11 = run_each('11')
 	vars_11 = json.loads(open('2010acs5elements.json').read())
 	totals_11 = csv_output('2011/3',vars_11,stats_11,results_11,land_area_11)
 	
 	stats_11_135, results_11_135, land_area_11_135 = run_each('11-135')
-	csv_output('2011/135',vars_11,stats_11_135,results_11_135,land_area_11_135,totals_11)'''
+	csv_output('2011/135',vars_11,stats_11_135,results_11_135,land_area_11_135,totals_11)
 
 if __name__ == '__main__':
 	main()
