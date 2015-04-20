@@ -3,26 +3,32 @@
 
 # basics
 
+
 ## P1. Total Population [1]
 
 * P001001 - Total population
+
 ## P2. Unweighted Sample Count of the Population [1]
 
 * P002001 - Total population
+
 ## P3. 100-Percent Count of the Population [1]
 
 * P003001 - Total population
 
 # housing
 
+
 ## H81. Aggregate Value (Dollars) for Specified Owner-occupied Housing Units by Mortgage Status [3]
 
 * H081001 - Aggregate value: Specified owner-occupied housing units
+
 ## H84. Value for All Owner-occupied Housing Units [25]
 
 * H084001 - Total: Owner-occupied housing units
 
 # education-25
+
 
 ## P37. Sex by Educational Attainment for the Population 25 Years and Over [35]
 
@@ -64,6 +70,7 @@
 
 # race
 
+
 ## P5. Urban and Rural [7]
 
 * P005001 - Total population
@@ -73,6 +80,7 @@
 * P005005 - Total:  Rural:
 * P005006 - Total:  Rural:  Farm
 * P005007 - Total:  Rural:  Nonfarm
+
 ## P6. Race [8]
 
 * P006001 - Total population
@@ -85,6 +93,7 @@
 * P006008 - Total:  Two or more races
 
 # education-18
+
 
 ## PCT25. Sex by Age by Educational Attainment for the Population 18 Years and Over [83]
 
@@ -174,6 +183,7 @@
 
 # income
 
+
 ## P54. Aggregate Household Income in 1999 (Dollars) [3]
 
 * P054001 - Aggregate household income in 1999: Households
@@ -181,6 +191,7 @@
 * P054003 - Aggregate household income in 1999:  $200,000 or more
 
 # poverty
+
 
 ## P88. Ratio of Income in 1999 to Poverty Level [10]
 
@@ -196,6 +207,7 @@
 * P088010 - Total:  2.00 and over
 
 # ethnicity
+
 
 ## P7. Hispanic or Latino by Race [17]
 

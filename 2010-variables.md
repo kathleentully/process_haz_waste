@@ -3,23 +3,28 @@
 
 # basics
 
+
 ## B00001.  Unweighted Sample Count of the Population
 
 * B00001_001E - Total
+
 ## B01003.  Total Population
 
 * B01003_001E - Total
 
 # housing
 
+
 ## B25079.  Aggregate Value (Dollars) for Owner-Occupied Housing Units by Age of Householder
 
 * B25079_001E - Aggregate value (dollars):
+
 ## B25075.  Value for Owner-Occupied Housing Units
 
 * B25075_001E - Total:
 
 # education-25
+
 
 ## B15002.  Sex by Educational Attainment for the Population 25 Years and over
 
@@ -61,9 +66,11 @@
 
 # race
 
+
 ## B01003.  Total Population
 
 * B01003_001E - Total
+
 ## B02001.  Race
 
 * B02001_001E - Total:
@@ -76,35 +83,45 @@
 * B02001_008E - Two or more races:
 * B02001_009E - Two or more races:!!Two races including Some other race
 * B02001_010E - Two or more races:!!Two races excluding Some other race, and three or more races
+
 ## B02005.  AMERICAN INDIAN AND ALASKA NATIVE ALONE FOR SELECTED TRIBAL GROUPINGS
 
 * B02005_001E - Total:
+
 ## B02006.  Asian Alone By Selected Groups
 
 * B02006_001E - Total:
+
 ## B02007.  Native Hawaiian and other Pacific Islander Alone By Selected Groups
 
 * B02007_001E - Total:
+
 ## B02008.  White Alone Or In Combination With One Or More Other Races
 
 * B02008_001E - Total:
+
 ## B02009.  Black Or African American Alone Or In Combination With One Or More Other Races
 
 * B02009_001E - Total:
+
 ## B02010.  American Indian And Alaska Native Alone Or In Combination With One Or More Other Races
 
 * B02010_001E - Total:
+
 ## B02011.  Asian Alone Or In Combination With One Or More Other Races
 
 * B02011_001E - Total:
+
 ## B02012.  Native Hawaiian And Other Pacific Islander Alone Or In Combination With One Or More Other Races
 
 * B02012_001E - Total:
+
 ## B02013.  Some Other Race Alone Or In Combination With One Or More Other Races
 
 * B02013_001E - Total:
 
 # education-18
+
 
 ## B15001.  SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER
 
@@ -194,14 +211,17 @@
 
 # income
 
+
 ## B19025.  Aggregate Household Income
 
 * B19025_001E - Aggregate household income in the past 12 months (in 2010 inflation-adjusted dollars)
+
 ## B19001.  Household Income
 
 * B19001_001E - Total:
 
 # poverty
+
 
 ## C17002.  Ratio of Income to Poverty Level in the Past 12 Months
 
@@ -215,6 +235,7 @@
 * C17002_008E - 2.00 and over
 
 # ethnicity
+
 
 ## B03002.  Hispanic or Latino by Race
 
@@ -239,6 +260,7 @@
 * B03002_019E - Hispanic or Latino:!!Two or more races:
 * B03002_020E - Hispanic or Latino:!!Two or more races:!!Two races including Some other race
 * B03002_021E - Hispanic or Latino:!!Two or more races:!!Two races excluding Some other race, and three or more races
+
 ## B03003.  Hispanic or Latino Origin
 
 * B03003_001E - Total:

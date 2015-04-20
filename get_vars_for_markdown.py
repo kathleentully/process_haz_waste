@@ -19,6 +19,7 @@ for year, stuff in {'2000':[json.loads(open('2000longformelements.json').read())
 				print "%s not found..." %(var)
 				continue
 			if last != data['concept']:
+				print
 				print "##",data['concept']
 				print
 				last = data['concept']
