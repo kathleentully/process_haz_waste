@@ -71,16 +71,6 @@
 # race
 
 
-## P5. Urban and Rural [7]
-
-* P005001 - Total population
-* P005002 - Total:  Urban:
-* P005003 - Total:  Urban:  Inside urbanized areas
-* P005004 - Total:  Urban:  Inside urban clusters
-* P005005 - Total:  Rural:
-* P005006 - Total:  Rural:  Farm
-* P005007 - Total:  Rural:  Nonfarm
-
 ## P6. Race [8]
 
 * P006001 - Total population
@@ -183,12 +173,14 @@
 
 # income
 
+## P58. Earnings in 1999 for Households [3]
 
-## P54. Aggregate Household Income in 1999 (Dollars) [3]
+* P058001 - Total: Households
 
-* P054001 - Aggregate household income in 1999: Households
-* P054002 - Aggregate household income in 1999:  Less than $200,000
-* P054003 - Aggregate household income in 1999:  $200,000 or more
+## P67. Aggregate Earnings in 1999 (Dollars) for Households [1]
+
+* P067001 - Aggregate earnings in 1999 Households
+
 
 # poverty
 
