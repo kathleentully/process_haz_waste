@@ -1,15 +1,5 @@
-P002001 : P2. Unweighted Sample Count of the Population [1] : Total population
-3.000000 km,total
-110618,44046662
-
-P001001 : P1. Total Population [1] : Total population
-3.000000 km,total
-845626,285230516
-
-P003001 : P3. 100-Percent Count of the Population [1] : Total population
-3.000000 km,total
-845905,285230516
-
-ALAND01 : 2001 Census land area (square meters)
-3.000000 km,total
-7732093561,9158021763139
+Variable,3.000000 km,total,Beyond
+P002001 : P2. Unweighted Sample Count of the Population [1] : Total population,110618,44046662,43936044
+P001001 : P1. Total Population [1] : Total population,845626,285230516,284384890
+P003001 : P3. 100-Percent Count of the Population [1] : Total population,845905,285230516,284384611
+ALAND01 : 2001 Census land area (square meters),7732093561,9158021763139,9150289669578

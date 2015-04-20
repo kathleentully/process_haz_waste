@@ -1,40 +1,11 @@
-P088007 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.50 to 1.74
-3.000000 km,total
-540772,12093076
-
-P088006 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.25 to 1.49
-3.000000 km,total
-578635,12412783
-
-P088005 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.00 to 1.24
-3.000000 km,total
-572854,11610252
-
-P088004 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  75 to .99
-3.000000 km,total
-526722,10438181
-
-P088003 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  50 to .74
-3.000000 km,total
-466391,8955727
-
-P088002 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  Under .50
-3.000000 km,total
-883217,16324591
-
-P088001 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total: Population for whom poverty status is determined
-3.000000 km,total
-10461578,277652014
-
-P088009 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.85 to 1.99
-3.000000 km,total
-295535,6997902
-
-P088008 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.75 to 1.84
-3.000000 km,total
-223739,5187973
-
-P088010 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  2.00 and over
-3.000000 km,total
-6373713,193631529
-
+Variable,3.000000 km,total,Beyond
+P088007 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.50 to 1.74,540772,12093076,11552304
+P088006 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.25 to 1.49,578635,12412783,11834148
+P088005 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.00 to 1.24,572854,11610252,11037398
+P088004 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  75 to .99,526722,10438181,9911459
+P088003 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  50 to .74,466391,8955727,8489336
+P088002 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  Under .50,883217,16324591,15441374
+P088001 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total: Population for whom poverty status is determined,10461578,277652014,267190436
+P088009 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.85 to 1.99,295535,6997902,6702367
+P088008 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  1.75 to 1.84,223739,5187973,4964234
+P088010 : P88. Ratio of Income in 1999 to Poverty Level [10] : Total:  2.00 and over,6373713,193631529,187257816

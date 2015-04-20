@@ -1,8 +1,3 @@
-P067001 : P67. Aggregate Earnings in 1999 (Dollars) for Households [1] : Aggregate earnings in 1999 Households
-3.000000 km,total
-6845774400,4832487980100
-
-P058001 : P58. Earnings in 1999 for Households [3] : Total: Households
-3.000000 km,total
-175408,106800938
-
+Variable,3.000000 km,total,Beyond
+P067001 : P67. Aggregate Earnings in 1999 (Dollars) for Households [1] : Aggregate earnings in 1999 Households,6845774400,4832487980100,4825642205700
+P058001 : P58. Earnings in 1999 for Households [3] : Total: Households,175408,106800938,106625530

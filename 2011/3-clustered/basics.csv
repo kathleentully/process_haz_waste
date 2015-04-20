@@ -1,11 +1,4 @@
-B01003_001E : B01003.  Total Population : Total
-3.000000 km,total
-8104210,307727594
-
-B00001_001E : B00001.  Unweighted Sample Count of the Population : Total
-3.000000 km,total
-524484,22904459
-
-ALAND11 : 2011 Census land area (square meters)
-3.000000 km,total
-6301119224,9158021763139
+Variable,3.000000 km,total,Beyond
+B01003_001E : B01003.  Total Population : Total,8104210,307727594,299623384
+B00001_001E : B00001.  Unweighted Sample Count of the Population : Total,524484,22904459,22379975
+ALAND11 : 2011 Census land area (square meters),6301119224,9158021763139,9151720643915

@@ -1,32 +1,9 @@
-C17002_001E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : Total:
-1.000000 km,3.000000 km,5.000000 km,total
-414056,7411057,14322940,299856106
-
-C17002_003E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : .50 to .99
-1.000000 km,3.000000 km,5.000000 km,total
-48763,844575,1452402,23893357
-
-C17002_002E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : Under .50
-1.000000 km,3.000000 km,5.000000 km,total
-40988,649879,1168519,18704526
-
-C17002_005E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 1.25 to 1.49
-1.000000 km,3.000000 km,5.000000 km,total
-26976,439673,761734,13914450
-
-C17002_004E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 1.00 to 1.24
-1.000000 km,3.000000 km,5.000000 km,total
-26538,449127,776524,13558766
-
-C17002_007E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 1.85 to 1.99
-1.000000 km,3.000000 km,5.000000 km,total
-11717,231874,415881,8095564
-
-C17002_006E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 1.50 to 1.84
-1.000000 km,3.000000 km,5.000000 km,total
-34175,565708,1030500,19236804
-
-C17002_008E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 2.00 and over
-1.000000 km,3.000000 km,5.000000 km,total
-224899,4230221,8717380,202452639
-
+Variable,1.000000 km,3.000000 km,5.000000 km,total,Beyond
+C17002_001E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : Total:,414056,7411057,14322940,299856106,277708053
+C17002_003E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : .50 to .99,48763,844575,1452402,23893357,21547617
+C17002_002E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : Under .50,40988,649879,1168519,18704526,16845140
+C17002_005E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 1.25 to 1.49,26976,439673,761734,13914450,12686067
+C17002_004E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 1.00 to 1.24,26538,449127,776524,13558766,12306577
+C17002_007E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 1.85 to 1.99,11717,231874,415881,8095564,7436092
+C17002_006E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 1.50 to 1.84,34175,565708,1030500,19236804,17606421
+C17002_008E : C17002.  Ratio of Income to Poverty Level in the Past 12 Months : 2.00 and over,224899,4230221,8717380,202452639,189280139

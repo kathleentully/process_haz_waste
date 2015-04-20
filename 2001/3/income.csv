@@ -1,12 +1,3 @@
-"P054002 : P54. Aggregate Household Income in 1999 (Dollars) [3] : Aggregate household income in 1999:  Less than $200,000"
-3.000000 km,total
-172110367300,5100323792900
-
-"P054003 : P54. Aggregate Household Income in 1999 (Dollars) [3] : Aggregate household income in 1999:  $200,000 or more"
-3.000000 km,total
-22807979400,908571629000
-
-P054001 : P54. Aggregate Household Income in 1999 (Dollars) [3] : Aggregate household income in 1999: Households
-3.000000 km,total
-194918347100,6008895422100
-
+Variable,3.000000 km,total,Beyond
+P067001 : P67. Aggregate Earnings in 1999 (Dollars) for Households [1] : Aggregate earnings in 1999 Households,160188873500,4832487980100,4672299106600
+P058001 : P58. Earnings in 1999 for Households [3] : Total: Households,3934542,106800938,102866396

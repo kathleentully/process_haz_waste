@@ -1,60 +1,16 @@
-P006003 : P6. Race [8] : Total:  Black or African American alone
-3.000000 km,total
-176468,34661413
-
-P006004 : P6. Race [8] : Total:  American Indian and Alaska Native alone
-3.000000 km,total
-8991,2458321
-
-P006002 : P6. Race [8] : Total:  White alone
-3.000000 km,total
-483285,214421834
-
-P006007 : P6. Race [8] : Total:  Some other race alone
-3.000000 km,total
-139614,15695722
-
-P006005 : P6. Race [8] : Total:  Asian alone
-3.000000 km,total
-25396,10180517
-
-P005001 : P5. Urban and Rural [7] : Total population
-3.000000 km,total
-859379,285230516
-
-P005002 : P5. Urban and Rural [7] : Total:  Urban:
-3.000000 km,total
-850453,225953257
-
-P005003 : P5. Urban and Rural [7] : Total:  Urban:  Inside urbanized areas
-3.000000 km,total
-817287,195814547
-
-P005004 : P5. Urban and Rural [7] : Total:  Urban:  Inside urban clusters
-3.000000 km,total
-33166,30138710
-
-P005005 : P5. Urban and Rural [7] : Total:  Rural:
-3.000000 km,total
-8926,59277259
-
-P005006 : P5. Urban and Rural [7] : Total:  Rural:  Farm
-3.000000 km,total
-204,2993055
-
-P005007 : P5. Urban and Rural [7] : Total:  Rural:  Nonfarm
-3.000000 km,total
-8722,56284204
-
-P006006 : P6. Race [8] : Total:  Native Hawaiian and Other Pacific Islander alone
-3.000000 km,total
-565,379208
-
-P006001 : P6. Race [8] : Total population
-3.000000 km,total
-859379,285230516
-
-P006008 : P6. Race [8] : Total:  Two or more races
-3.000000 km,total
-25060,7433501
-
+Variable,3.000000 km,total,Beyond
+P006003 : P6. Race [8] : Total:  Black or African American alone,176468,34661413,34484945
+P006004 : P6. Race [8] : Total:  American Indian and Alaska Native alone,8991,2458321,2449330
+P006002 : P6. Race [8] : Total:  White alone,483285,214421834,213938549
+P006007 : P6. Race [8] : Total:  Some other race alone,139614,15695722,15556108
+P006005 : P6. Race [8] : Total:  Asian alone,25396,10180517,10155121
+P005001 : P5. Urban and Rural [7] : Total population,859379,285230516,284371137
+P005002 : P5. Urban and Rural [7] : Total:  Urban:,850453,225953257,225102804
+P005003 : P5. Urban and Rural [7] : Total:  Urban:  Inside urbanized areas,817287,195814547,194997260
+P005004 : P5. Urban and Rural [7] : Total:  Urban:  Inside urban clusters,33166,30138710,30105544
+P005005 : P5. Urban and Rural [7] : Total:  Rural:,8926,59277259,59268333
+P005006 : P5. Urban and Rural [7] : Total:  Rural:  Farm,204,2993055,2992851
+P005007 : P5. Urban and Rural [7] : Total:  Rural:  Nonfarm,8722,56284204,56275482
+P006006 : P6. Race [8] : Total:  Native Hawaiian and Other Pacific Islander alone,565,379208,378643
+P006001 : P6. Race [8] : Total population,859379,285230516,284371137
+P006008 : P6. Race [8] : Total:  Two or more races,25060,7433501,7408441

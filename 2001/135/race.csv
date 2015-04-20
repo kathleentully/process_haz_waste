@@ -1,60 +1,16 @@
-P006003 : P6. Race [8] : Total:  Black or African American alone
-1.000000 km,3.000000 km,5.000000 km,total
-123876,1796134,3301223,34661413
-
-P006004 : P6. Race [8] : Total:  American Indian and Alaska Native alone
-1.000000 km,3.000000 km,5.000000 km,total
-3903,71395,125680,2458321
-
-P006002 : P6. Race [8] : Total:  White alone
-1.000000 km,3.000000 km,5.000000 km,total
-348475,6010718,10679624,214421834
-
-P006007 : P6. Race [8] : Total:  Some other race alone
-1.000000 km,3.000000 km,5.000000 km,total
-102867,1270250,2020544,15695722
-
-P006005 : P6. Race [8] : Total:  Asian alone
-1.000000 km,3.000000 km,5.000000 km,total
-41393,641351,1143415,10180517
-
-P005001 : P5. Urban and Rural [7] : Total population
-1.000000 km,3.000000 km,5.000000 km,total
-650467,10169445,17929727,285230516
-
-P005002 : P5. Urban and Rural [7] : Total:  Urban:
-1.000000 km,3.000000 km,5.000000 km,total
-650467,10132377,17734519,225953257
-
-P005003 : P5. Urban and Rural [7] : Total:  Urban:  Inside urbanized areas
-1.000000 km,3.000000 km,5.000000 km,total
-643671,9921174,17482294,195814547
-
-P005004 : P5. Urban and Rural [7] : Total:  Urban:  Inside urban clusters
-1.000000 km,3.000000 km,5.000000 km,total
-6796,211203,252225,30138710
-
-P005005 : P5. Urban and Rural [7] : Total:  Rural:
-1.000000 km,3.000000 km,5.000000 km,total
-0,37068,195208,59277259
-
-P005006 : P5. Urban and Rural [7] : Total:  Rural:  Farm
-1.000000 km,3.000000 km,5.000000 km,total
-0,684,4223,2993055
-
-P005007 : P5. Urban and Rural [7] : Total:  Rural:  Nonfarm
-1.000000 km,3.000000 km,5.000000 km,total
-0,36384,190985,56284204
-
-P006006 : P6. Race [8] : Total:  Native Hawaiian and Other Pacific Islander alone
-1.000000 km,3.000000 km,5.000000 km,total
-1081,18812,29831,379208
-
-P006001 : P6. Race [8] : Total population
-1.000000 km,3.000000 km,5.000000 km,total
-650467,10169445,17929727,285230516
-
-P006008 : P6. Race [8] : Total:  Two or more races
-1.000000 km,3.000000 km,5.000000 km,total
-28872,360785,629410,7433501
-
+Variable,1.000000 km,3.000000 km,5.000000 km,total,Beyond
+P006003 : P6. Race [8] : Total:  Black or African American alone,123876,1796134,3301223,34661413,29440180
+P006004 : P6. Race [8] : Total:  American Indian and Alaska Native alone,3903,71395,125680,2458321,2257343
+P006002 : P6. Race [8] : Total:  White alone,348475,6010718,10679624,214421834,197383017
+P006007 : P6. Race [8] : Total:  Some other race alone,102867,1270250,2020544,15695722,12302061
+P006005 : P6. Race [8] : Total:  Asian alone,41393,641351,1143415,10180517,8354358
+P005001 : P5. Urban and Rural [7] : Total population,650467,10169445,17929727,285230516,256480877
+P005002 : P5. Urban and Rural [7] : Total:  Urban:,650467,10132377,17734519,225953257,197435894
+P005003 : P5. Urban and Rural [7] : Total:  Urban:  Inside urbanized areas,643671,9921174,17482294,195814547,167767408
+P005004 : P5. Urban and Rural [7] : Total:  Urban:  Inside urban clusters,6796,211203,252225,30138710,29668486
+P005005 : P5. Urban and Rural [7] : Total:  Rural:,0,37068,195208,59277259,59044983
+P005006 : P5. Urban and Rural [7] : Total:  Rural:  Farm,0,684,4223,2993055,2988148
+P005007 : P5. Urban and Rural [7] : Total:  Rural:  Nonfarm,0,36384,190985,56284204,56056835
+P006006 : P6. Race [8] : Total:  Native Hawaiian and Other Pacific Islander alone,1081,18812,29831,379208,329484
+P006001 : P6. Race [8] : Total population,650467,10169445,17929727,285230516,256480877
+P006008 : P6. Race [8] : Total:  Two or more races,28872,360785,629410,7433501,6414434

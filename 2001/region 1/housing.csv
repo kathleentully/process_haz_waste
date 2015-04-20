@@ -1,8 +1,3 @@
-H084001 : H84. Value for All Owner-occupied Housing Units [25] : Total: Owner-occupied housing units
-3.000000 km,total
-100914,70736224
-
-H081001 : H81. Aggregate Value (Dollars) for Specified Owner-occupied Housing Units by Mortgage Status [3] : Aggregate value: Specified owner-occupied housing units
-3.000000 km,total
-11808332500,8849273890000
-
+Variable,3.000000 km,total,Beyond
+H084001 : H84. Value for All Owner-occupied Housing Units [25] : Total: Owner-occupied housing units,100914,70736224,70635310
+H081001 : H81. Aggregate Value (Dollars) for Specified Owner-occupied Housing Units by Mortgage Status [3] : Aggregate value: Specified owner-occupied housing units,11808332500,8849273890000,8837465557500
