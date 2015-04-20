@@ -10,21 +10,26 @@ Determining the polygons based on 50% areal apportionment
 	* Build a cluster: Determine all points that are within double the maximum given distance using the GeoDjango spatial lookup ```distance_lte```/PostGIS function ```ST_Distance(poly, geom)```. For each of these points, determine any new points within double the maximum distance. Continue propagating until all points have been found.
 
 	![An Arrangement of Points](https://raw.githubusercontent.com/kathleentully/process_haz_waste/master/example/points.png)
+
 	As an example, consider these points. Begin at point 1.
 
 	![Point 1 with 3 km and 6 km radii](https://raw.githubusercontent.com/kathleentully/process_haz_waste/master/example/points-step1.png)
+
 	The red circle is a 3 km radius and the blue is a 6 km radius. The 3 km radius of the 1st point will intersect with the 3 km radius of any points within the 6 km radius. 
 
 	![Second Round of Points](https://raw.githubusercontent.com/kathleentully/process_haz_waste/master/example/points-step2.png)
+
 	The second round of points are then check for neighbors.
 
 	![Third Round of Points](https://raw.githubusercontent.com/kathleentully/process_haz_waste/master/example/points-step3.png)
+
 	And then the third, but no more points are found.
 	* Remove all other points in the cluster from the list of points. This creates a list of clusters, where some clusters may only have one point.
 * Now, for each cluster:
 	* Create a regular twelve sided polygon around each point in the cluster. This polygon approximates a radius around each point. It covers over 95% of the area covered by an actual circle (12 polygons × cos(2pi/24) × sin(2pi/24) / pi = 95.49%). This percentage increases when points are clustered.
 	* All polygons for a given distance are merged to create one polygon. 
 	![An Example of a Merged Polygon](https://raw.githubusercontent.com/kathleentully/process_haz_waste/master/example/polygon.png)
+	
 	* For each cluster, the following algorithm is run:
 		* Find all census tracts completely inside the polygon using GeoDjango's spatial lookup ```coveredby```/PostGIS function ```ST_CoveredBy()```. Create a working list of polygons.
 		* Also find all census tracts that partially intersect with the polygon. For each of these census tracts, find the polygon created by the intersection of the radius approximation polygon and the census tract. Using GeoDjango's ```Area()``` function, determine the ratio of this new polygon to the area of the census tract. If the ratio is greater than half, this census tract is added to the list.

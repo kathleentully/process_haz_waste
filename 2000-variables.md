@@ -1,19 +1,31 @@
 2000 Variables
 ==============
+
 # basics
-# P1. Total Population [1]
+
+## P1. Total Population [1]
+
 * P001001 - Total population
-# P2. Unweighted Sample Count of the Population [1]
+## P2. Unweighted Sample Count of the Population [1]
+
 * P002001 - Total population
-# P3. 100-Percent Count of the Population [1]
+## P3. 100-Percent Count of the Population [1]
+
 * P003001 - Total population
+
 # housing
-# H81. Aggregate Value (Dollars) for Specified Owner-occupied Housing Units by Mortgage Status [3]
+
+## H81. Aggregate Value (Dollars) for Specified Owner-occupied Housing Units by Mortgage Status [3]
+
 * H081001 - Aggregate value: Specified owner-occupied housing units
-# H84. Value for All Owner-occupied Housing Units [25]
+## H84. Value for All Owner-occupied Housing Units [25]
+
 * H084001 - Total: Owner-occupied housing units
+
 # education-25
-# P37. Sex by Educational Attainment for the Population 25 Years and Over [35]
+
+## P37. Sex by Educational Attainment for the Population 25 Years and Over [35]
+
 * P037001 - Total: Population 25 years and over
 * P037002 - Total:  Male:
 * P037003 - Total:  Male:  No schooling completed
@@ -49,8 +61,11 @@
 * P037033 - Total:  Female:  Master's degree
 * P037034 - Total:  Female:  Professional school degree
 * P037035 - Total:  Female:  Doctorate degree
+
 # race
-# P5. Urban and Rural [7]
+
+## P5. Urban and Rural [7]
+
 * P005001 - Total population
 * P005002 - Total:  Urban:
 * P005003 - Total:  Urban:  Inside urbanized areas
@@ -58,7 +73,8 @@
 * P005005 - Total:  Rural:
 * P005006 - Total:  Rural:  Farm
 * P005007 - Total:  Rural:  Nonfarm
-# P6. Race [8]
+## P6. Race [8]
+
 * P006001 - Total population
 * P006002 - Total:  White alone
 * P006003 - Total:  Black or African American alone
@@ -67,8 +83,11 @@
 * P006006 - Total:  Native Hawaiian and Other Pacific Islander alone
 * P006007 - Total:  Some other race alone
 * P006008 - Total:  Two or more races
+
 # education-18
-# PCT25. Sex by Age by Educational Attainment for the Population 18 Years and Over [83]
+
+## PCT25. Sex by Age by Educational Attainment for the Population 18 Years and Over [83]
+
 * PCT025001 - Total: Population 18 years and over
 * PCT025002 - Total:  Male:
 * PCT025003 - Total:  Male:  18 to 24 years:
@@ -152,13 +171,19 @@
 * PCT025081 - Total:  Female:  65 years and over:  Associate degree
 * PCT025082 - Total:  Female:  65 years and over:  Bachelor's degree
 * PCT025083 - Total:  Female:  65 years and over:  Graduate or professional degree
+
 # income
-# P54. Aggregate Household Income in 1999 (Dollars) [3]
+
+## P54. Aggregate Household Income in 1999 (Dollars) [3]
+
 * P054001 - Aggregate household income in 1999: Households
 * P054002 - Aggregate household income in 1999:  Less than $200,000
 * P054003 - Aggregate household income in 1999:  $200,000 or more
+
 # poverty
-# P88. Ratio of Income in 1999 to Poverty Level [10]
+
+## P88. Ratio of Income in 1999 to Poverty Level [10]
+
 * P088001 - Total: Population for whom poverty status is determined
 * P088002 - Total:  Under .50
 * P088003 - Total:  50 to .74
@@ -169,8 +194,11 @@
 * P088008 - Total:  1.75 to 1.84
 * P088009 - Total:  1.85 to 1.99
 * P088010 - Total:  2.00 and over
+
 # ethnicity
-# P7. Hispanic or Latino by Race [17]
+
+## P7. Hispanic or Latino by Race [17]
+
 * P007001 - Total population
 * P007002 - Total:  Not Hispanic or Latino:
 * P007003 - Total:  Not Hispanic or Latino:  White alone

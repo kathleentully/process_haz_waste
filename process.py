@@ -151,7 +151,6 @@ def get_data_2011(variables, polygons):
 	return get_data('http://api.census.gov/data/2010/acs5',variables,polygons)
 
 def csv_output(folder,variables,stats,results,land_area,totals=None):
-	print 'start CSV'
 	with open(folder+'/cluster_stats.csv', 'wb') as csvfile:
 		csvwriter = csv.writer(csvfile)
 		for key in sorted(stats):
@@ -166,7 +165,6 @@ def csv_output(folder,variables,stats,results,land_area,totals=None):
 				totals[group] = get_data_2011(variables[group],results)
 			if folder[2] == '0':
 				totals[group] = get_data_2000(variables[group],results)
-				print totals[group]
 		with open(folder+'/'+group+'.csv', 'wb') as csvfile:
 			csvwriter = csv.writer(csvfile)
 			for key in totals[group]:
@@ -181,20 +179,23 @@ def csv_output(folder,variables,stats,results,land_area,totals=None):
 	return totals
 
 def main():
+	print 'Starting 2000...',
 	stats_00, results_00, land_area_00 = run_each('01')
 	vars_00 = json.loads(open('2000longformelements.json').read())
 	totals_00 = csv_output('2001/3',vars_00,stats_00,results_00,land_area_00)
 
 	stats_00_135, results_00_135, land_area_00_135 = run_each('01-135')
 	csv_output('2001/135',vars_00,stats_00_135,results_00_135,land_area_00_135)
+	print 'DONE'
 
+	print 'Starting 2010...',
 	stats_11, results_11, land_area_11 = run_each('11')
 	vars_11 = json.loads(open('2010acs5elements.json').read())
 	totals_11 = csv_output('2011/3',vars_11,stats_11,results_11,land_area_11)
 	
 	stats_11_135, results_11_135, land_area_11_135 = run_each('11-135')
 	csv_output('2011/135',vars_11,stats_11_135,results_11_135,land_area_11_135,totals_11)
+	print 'DONE'
 
 if __name__ == '__main__':
 	main()
-	print '...DONE'
