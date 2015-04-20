@@ -4,18 +4,26 @@ import json, urllib, csv
 key = json.loads(open('key.json').read())['key']
 VAR_LIMIT = 50
 
-def run_each(year):
+def run_each(year,clustered=False,region=None,state=None):
 	data = json.loads(open('20'+year+'-hazwaste.json').read())
 	polygons = {"1.000000 km":set(),"3.000000 km":set(),"5.000000 km":set()}
 	cluster_count = {'total_clustered':0,'total_points':0} #distribution of cluster sizes
 	points = set()
 	land_area = {"1.000000 km":0,"3.000000 km":0,"5.000000 km":0}
 
+	if region:
+		state = json.loads(open('states.json').read())
+		state = ("Region "+str(region),state["EPA Regions"]["Region "+str(region)])
 	for group in data:
 		for d in ["1.000000 km","3.000000 km","5.000000 km"]:
 			if d in group["areaAroundPoint"]:
-				if "polygons" in group["areaAroundPoint"][d]:
-					polygons[d] = polygons[d] | set(group["areaAroundPoint"][d]["polygons"])
+				if "polygons" in group["areaAroundPoint"][d] and (not clustered or len(group["areaAroundPoint"]["points"])):
+					if state:
+						for poly in group["areaAroundPoint"][d]["polygons"]:
+							if poly[:2] in state[1]:
+								polygons[d].add(poly)
+					else:
+						polygons[d] = polygons[d] | set(group["areaAroundPoint"][d]["polygons"])
 				if "land_area" in group["areaAroundPoint"][d]:
 					land_area[d] += group["areaAroundPoint"][d]["land_area"]
 		cluster_count["total_points"] += len(group["areaAroundPoint"]["points"])
@@ -150,8 +158,8 @@ def get_data_2000(variables, polygons):
 def get_data_2011(variables, polygons):
 	return get_data('http://api.census.gov/data/2010/acs5',variables,polygons)
 
-def csv_output(folder,variables,stats,results,land_area,totals=None):
-	with open(folder+'/cluster_stats.csv', 'wb') as csvfile:
+def csv_output(folder,variables,stats,results,land_area,totals=None,prefix=''):
+	with open(folder+'/'+prefix+'cluster_stats.csv', 'wb') as csvfile:
 		csvwriter = csv.writer(csvfile)
 		for key in sorted(stats):
 			csvwriter.writerow([key, stats[key]])
@@ -165,7 +173,7 @@ def csv_output(folder,variables,stats,results,land_area,totals=None):
 				totals[group] = get_data_2011(variables[group],results)
 			if folder[2] == '0':
 				totals[group] = get_data_2000(variables[group],results)
-		with open(folder+'/'+group+'.csv', 'wb') as csvfile:
+		with open(folder+'/'+prefix+group+'.csv', 'wb') as csvfile:
 			csvwriter = csv.writer(csvfile)
 			for key in totals[group]:
 				csvwriter.writerow([str(key+' : '+totals[group][key]['concept']+' : '+totals[group][key]['label'])])
@@ -173,28 +181,50 @@ def csv_output(folder,variables,stats,results,land_area,totals=None):
 				csvwriter.writerow([totals[group][key][dist] for dist in sorted(totals[group][key]) if dist not in ['concept', 'label']])
 				csvwriter.writerow([])
 			if group == 'basics':
-				csvwriter.writerow(["ALAND10 : 2010 Census land area (square meters)"])
+				csvwriter.writerow(["ALAND"+folder[2:4]+" : "+folder[:4]+" Census land area (square meters)"])
 				csvwriter.writerow([dist for dist in sorted(totals[group][key]) if dist not in ['concept', 'label'] ])
 				csvwriter.writerow([land_area[dist] for dist in sorted(totals[group][key]) if dist not in ['concept', 'label','total']]+[9158021763139])
 	return totals
 
 def main():
 	print 'Starting 2000...',
-	stats_00, results_00, land_area_00 = run_each('01')
+	#stats_00, results_00, land_area_00 = run_each('01')
 	vars_00 = json.loads(open('2000longformelements.json').read())
-	totals_00 = csv_output('2001/3',vars_00,stats_00,results_00,land_area_00)
+	#totals_00 = csv_output('2001/3',vars_00,stats_00,results_00,land_area_00)
 
-	stats_00_135, results_00_135, land_area_00_135 = run_each('01-135')
-	csv_output('2001/135',vars_00,stats_00_135,results_00_135,land_area_00_135)
+	#stats_00_135, results_00_135, land_area_00_135 = run_each('01-135')
+	#csv_output('2001/135',vars_00,stats_00_135,results_00_135,land_area_00_135)
+
+	#stats_00_clustered, results_00_clustered, land_area_00_clustered = run_each('01')
+	#totals_00_clustered = csv_output('2001/3-clustered',vars_00,stats_00_clustered,results_00_clustered,land_area_00_clustered)
+
+	for region in range(1,11):
+		stats, results, land_area = run_each('01',region=region)
+		totals = csv_output('2001/region '+str(region),vars_00,stats,results,land_area)
+	for code,data in json.loads(open('states.json').read())['state'].iteritems():
+		stats, results, land_area = run_each('01',state=(data['name'],list(code)))
+		totals = csv_output('2001/states',vars_00['ethnicity'],stats,results,land_area,prefix=data['name']+'-')
+
 	print 'DONE'
 
 	print 'Starting 2010...',
-	stats_11, results_11, land_area_11 = run_each('11')
+	#stats_11, results_11, land_area_11 = run_each('11')
 	vars_11 = json.loads(open('2010acs5elements.json').read())
-	totals_11 = csv_output('2011/3',vars_11,stats_11,results_11,land_area_11)
+	#totals_11 = csv_output('2011/3',vars_11,stats_11,results_11,land_area_11)
 	
-	stats_11_135, results_11_135, land_area_11_135 = run_each('11-135')
-	csv_output('2011/135',vars_11,stats_11_135,results_11_135,land_area_11_135,totals_11)
+	#stats_11_135, results_11_135, land_area_11_135 = run_each('11-135')
+	#csv_output('2011/135',vars_11,stats_11_135,results_11_135,land_area_11_135,totals_11)
+
+	#stats_11_clustered, results_11_clustered, land_area_11_clustered = run_each('11')
+	#totals_11_clustered = csv_output('2011/3-clustered',vars_11,stats_11_clustered,results_11_clustered,land_area_11_clustered)
+
+
+	for region in range(1,11):
+		stats, results, land_area = run_each('11',region=region)
+		totals = csv_output('2011/region '+str(region),vars_00,stats,results,land_area)
+	for code,data in json.loads(open('states.json').read())['state'].iteritems():
+		stats, results, land_area = run_each('11',state=(data['name'],list(code)))
+		totals = csv_output('2011/states',vars_00['ethnicity'],stats,results,land_area,prefix=data['name']+'-')
 	print 'DONE'
 
 if __name__ == '__main__':

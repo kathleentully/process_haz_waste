@@ -26,10 +26,10 @@ Determining the polygons based on 50% areal apportionment
 	And then the third, but no more points are found.
 	* Remove all other points in the cluster from the list of points. This creates a list of clusters, where some clusters may only have one point.
 * Now, for each cluster:
-	* Create a regular twelve sided polygon around each point in the cluster. This polygon approximates a radius around each point. It covers over 95% of the area covered by an actual circle (12 polygons × cos(2pi/24) × sin(2pi/24) / pi = 95.49%). This percentage increases when points are clustered.
+	* Create a regular twelve sided polygon around each point in the cluster. This polygon approximates a circle around each point. It covers over 95% of the area covered by an actual circle (12 polygons × cos(2pi/24) × sin(2pi/24) / pi = 95.49%). This percentage increases when points are clustered.
 	* All polygons for a given distance are merged to create one polygon. 
 	![An Example of a Merged Polygon](https://raw.githubusercontent.com/kathleentully/process_haz_waste/master/example/polygon.png)
-	
+
 	* For each cluster, the following algorithm is run:
 		* Find all census tracts completely inside the polygon using GeoDjango's spatial lookup ```coveredby```/PostGIS function ```ST_CoveredBy()```. Create a working list of polygons.
 		* Also find all census tracts that partially intersect with the polygon. For each of these census tracts, find the polygon created by the intersection of the radius approximation polygon and the census tract. Using GeoDjango's ```Area()``` function, determine the ratio of this new polygon to the area of the census tract. If the ratio is greater than half, this census tract is added to the list.
@@ -37,3 +37,4 @@ Determining the polygons based on 50% areal apportionment
 * Now that we have a list of census tracts that are categorized by distance from each site, each census tract is looked up using a census API.
 	* For the year 2000, the 2000 long form census data was used. Please refer to [the variables available in this data](http://api.census.gov/data/2000/sf3/variables.html) and [the variables actually used for this analysis](2000-variables.md).
 	* For the year 2010, the census abandoned the long form and created the American Consumer Survey. For this, we used the 2010 American Consumer Survey 5 year estimate. Please refer to [the variables available in this data](http://api.census.gov/data/2010/acs5/variables.html) and [the variables actually used for this analysis](2010-variables.md).
+* Each data point is summed up for each distance level and also for all states. This means the totals in the raw data 
