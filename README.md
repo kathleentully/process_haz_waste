@@ -37,4 +37,3 @@ Determining the polygons based on 50% areal apportionment
 * Now that we have a list of census tracts that are categorized by distance from each site, each census tract is looked up using a census API.
 	* For the year 2000, the 2000 long form census data was used. Please refer to [the variables available in this data](http://api.census.gov/data/2000/sf3/variables.html) and [the variables actually used for this analysis](2000-variables.md).
 	* For the year 2010, the census abandoned the long form and created the American Consumer Survey. For this, we used the 2010 American Consumer Survey 5 year estimate. Please refer to [the variables available in this data](http://api.census.gov/data/2010/acs5/variables.html) and [the variables actually used for this analysis](2010-variables.md).
-* Each data point is summed up for each distance level and also for all states. This means the totals in the raw data 
