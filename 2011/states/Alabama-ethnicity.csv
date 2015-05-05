@@ -1,25 +1,25 @@
-Variable,total,Beyond
-B03002_008E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Some other race alone,688071,688071
-B03002_006E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Asian alone,14024878,14024878
-B03002_016E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Asian alone,173029,173029
-B03002_004E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Black or African American alone,37126836,37126836
-"B03002_021E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Two or more races:!!Two races excluding Some other race, and three or more races",1121553,1121553
-B03002_018E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Some other race alone,16311732,16311732
-B03002_010E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Two or more races:!!Two races including Some other race,248817,248817
-B03002_002E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:,256283191,256283191
-B03002_012E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:,51444403,51444403
-B03002_014E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Black or African American alone,1126759,1126759
-B03003_002E : B03003.  Hispanic or Latino Origin : Not Hispanic or Latino,256283191,256283191
-B03002_009E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Two or more races:,5329267,5329267
-B03002_015E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!American Indian and Alaska Native alone,439048,439048
-B03002_005E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!American Indian and Alaska Native alone,2048832,2048832
-B03002_017E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Native Hawaiian and Other Pacific Islander alone,32970,32970
-B03002_020E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Two or more races:!!Two races including Some other race,1188607,1188607
-B03002_019E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Two or more races:,2310160,2310160
-B03002_003E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!White alone,196606503,196606503
-"B03002_011E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Two or more races:!!Two races excluding Some other race, and three or more races",5080450,5080450
-B03002_001E : B03002.  Hispanic or Latino by Race : Total:,307727594,307727594
-B03002_013E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!White alone,31050705,31050705
-B03002_007E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Native Hawaiian and Other Pacific Islander alone,458804,458804
-B03003_003E : B03003.  Hispanic or Latino Origin : Hispanic or Latino,51444403,51444403
-B03003_001E : B03003.  Hispanic or Latino Origin : Total:,307727594,307727594
+Variable,3.000000 km,total,Beyond
+B03002_008E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Some other race alone,35.0,688071,688036.0
+B03002_006E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Asian alone,722.0,14024878,14024156.0
+B03002_016E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Asian alone,0.0,173029,173029.0
+B03002_004E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Black or African American alone,9631.0,37126836,37117205.0
+"B03002_021E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Two or more races:!!Two races excluding Some other race, and three or more races",76.0,1121553,1121477.0
+B03002_018E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Some other race alone,147.0,16311732,16311585.0
+B03002_010E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Two or more races:!!Two races including Some other race,0.0,248817,248817.0
+B03002_002E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:,32081.0,256283191,256251110.0
+B03002_012E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:,934.0,51444403,51443469.0
+B03002_014E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Black or African American alone,194.0,1126759,1126565.0
+B03003_002E : B03003.  Hispanic or Latino Origin : Not Hispanic or Latino,32081.0,256283191,256251110.0
+B03002_009E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Two or more races:,214.0,5329267,5329053.0
+B03002_015E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!American Indian and Alaska Native alone,0.0,439048,439048.0
+B03002_005E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!American Indian and Alaska Native alone,27.0,2048832,2048805.0
+B03002_017E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Native Hawaiian and Other Pacific Islander alone,0.0,32970,32970.0
+B03002_020E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Two or more races:!!Two races including Some other race,34.0,1188607,1188573.0
+B03002_019E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!Two or more races:,110.0,2310160,2310050.0
+B03002_003E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!White alone,21452.0,196606503,196585051.0
+"B03002_011E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Two or more races:!!Two races excluding Some other race, and three or more races",214.0,5080450,5080236.0
+B03002_001E : B03002.  Hispanic or Latino by Race : Total:,33015.0,307727594,307694579.0
+B03002_013E : B03002.  Hispanic or Latino by Race : Hispanic or Latino:!!White alone,483.0,31050705,31050222.0
+B03002_007E : B03002.  Hispanic or Latino by Race : Not Hispanic or Latino:!!Native Hawaiian and Other Pacific Islander alone,0.0,458804,458804.0
+B03003_003E : B03003.  Hispanic or Latino Origin : Hispanic or Latino,934.0,51444403,51443469.0
+B03003_001E : B03003.  Hispanic or Latino Origin : Total:,33015.0,307727594,307694579.0

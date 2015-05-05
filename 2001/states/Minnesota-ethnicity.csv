@@ -1,18 +1,18 @@
-Variable,total,Beyond
-P007008 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Some other race alone,447921,447921
-P007009 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Two or more races,5015633,5015633
-P007002 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:,246233426,246233426
-P007003 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  White alone,194552547,194552547
-P007017 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Two or more races,2417868,2417868
-P007001 : P7. Hispanic or Latino by Race [17] : Total population,285230516,285230516
-P007006 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Asian alone,10070664,10070664
-P007007 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Native Hawaiian and Other Pacific Islander alone,342801,342801
-P007004 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Black or African American alone,33712156,33712156
-P007005 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  American Indian and Alaska Native alone,2091704,2091704
-P007015 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Native Hawaiian and Other Pacific Islander alone,36407,36407
-P007013 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  American Indian and Alaska Native alone,366617,366617
-P007014 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Asian alone,109853,109853
-P007010 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:,38997090,38997090
-P007011 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  White alone,19869287,19869287
-P007012 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Black or African American alone,949257,949257
-P007016 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Some other race alone,15247801,15247801
+Variable,3.000000 km,total,Beyond
+P007008 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Some other race alone,509.0,447921,447412.0
+P007009 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Two or more races,10922.0,5015633,5004711.0
+P007002 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:,295742.0,246233426,245937684.0
+P007003 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  White alone,205965.0,194552547,194346582.0
+P007017 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Two or more races,2137.0,2417868,2415731.0
+P007001 : P7. Hispanic or Latino by Race [17] : Total population,317391.0,285230516,284913125.0
+P007006 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Asian alone,31816.0,10070664,10038848.0
+P007007 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Native Hawaiian and Other Pacific Islander alone,182.0,342801,342619.0
+P007004 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  Black or African American alone,40691.0,33712156,33671465.0
+P007005 : P7. Hispanic or Latino by Race [17] : Total:  Not Hispanic or Latino:  American Indian and Alaska Native alone,5657.0,2091704,2086047.0
+P007015 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Native Hawaiian and Other Pacific Islander alone,17.0,36407,36390.0
+P007013 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  American Indian and Alaska Native alone,620.0,366617,365997.0
+P007014 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Asian alone,203.0,109853,109650.0
+P007010 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:,21649.0,38997090,38975441.0
+P007011 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  White alone,7909.0,19869287,19861378.0
+P007012 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Black or African American alone,419.0,949257,948838.0
+P007016 : P7. Hispanic or Latino by Race [17] : Total:  Hispanic or Latino:  Some other race alone,10344.0,15247801,15237457.0
