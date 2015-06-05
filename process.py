@@ -24,7 +24,7 @@ def run_each(year,clustered=False,region=None,state=None):
 								polygons[d][poly] = group["areaAroundPoint"][d]["polygons"][poly] if poly not in polygons[d] else polygons[d][poly] + group["areaAroundPoint"][d]["polygons"][poly]
 							except:
 								polygons[d][poly] = 1.
-				if "land_area" in group["areaAroundPoint"][d]:
+				if "land_area" in group["areaAroundPoint"][d] and (not clustered or len(group["areaAroundPoint"]["points"])>1):
 					land_area[d] += group["areaAroundPoint"][d]["land_area"]
 		cluster_count["total_points"] += len(group["areaAroundPoint"]["points"])
 		for p in group["areaAroundPoint"]["points"]:
@@ -181,13 +181,30 @@ def csv_output(folder,variables,stats,results,land_area,totals=None,prefix='',sa
 			csvwriter = csv.writer(csvfile)
 			csvwriter.writerow(['Variable']+[dist for dist in sorted(totals[group][totals[group].keys()[0]]) if dist not in ['concept', 'label'] ]+['Beyond'])
 			for key in totals[group]:
-				csvwriter.writerow([str(key+' : '+totals[group][key]['concept']+' : '+totals[group][key]['label'])]+[totals[group][key][dist] for dist in sorted(totals[group][key]) if dist not in ['concept', 'label']]+[totals[group][key]['total']-sum([totals[group][key][dist] for dist in sorted(totals[group][key]) if dist not in ['concept', 'label','total']])])
+				csvwriter.writerow([str(key+' : '+totals[group][key]['concept']+' : '+totals[group][key]['label'])]
+					+[totals[group][key][dist] for dist in sorted(totals[group][key]) if dist not in ['concept', 'label']]
+					+[totals[group][key]['total']-sum([totals[group][key][dist] for dist in sorted(totals[group][key]) if dist not in ['concept', 'label','total']])])
+			if group[:6] == 'basics' and folder[:4] == '2011':
+				TOTAL_LAND_11 = 9158021763139
+				csvwriter.writerow(["ALAND10 : 2010 Census land area (square meters)"]+
+					[land_area[dist] for dist in sorted(land_area) if dist not in ['concept', 'label']]+
+					[TOTAL_LAND_11, TOTAL_LAND_11-sum([land_area[dist] for dist in sorted(land_area) if dist not in ['concept', 'label']])])
+			elif group[:6] == 'basics' and folder[:4] == '2001':
+				TOTAL_LAND_01 = 9158021762569
+				csvwriter.writerow(["ALAND00 : 2000 Census land area (square meters)"]+
+					[land_area[dist] for dist in sorted(land_area) if dist not in ['concept', 'label']]+
+					[TOTAL_LAND_01, TOTAL_LAND_01-sum([land_area[dist] for dist in sorted(land_area) if dist not in ['concept', 'label']])])
 	return totals
 
 def main():
 	print 'Starting 2000...'
 
 	vars_00 = json.loads(open('2000longformelements.json').read())
+
+	stats_00_135, results_00_135, land_area_00_135 = run_each('01-135')
+	csv_output('2001/135',{'basics2':vars_00['basics']},stats_00_135,results_00_135,land_area_00_135,save_cluster_stats=True)
+	
+	print '\t\t1 km, 3 km, 5 km processing DONE'
 
 	if raw_input('\tRun 3 km apportionment data? (y/n)').strip().lower() in ['y','yes']:
 		stats_00, results_00, land_area_00 = run_each('01-app')
