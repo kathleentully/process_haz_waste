@@ -3,8 +3,8 @@ Introduction
 
 This code is used to process the output of the [Social GIS](https://github.com/GK-12/SGIS-backend) REST API.
 
-Determining the polygons based on 50% areal apportionment
-=========================================================
+Determining the polygons based on 50% areal containnment
+========================================================
 
 * For each point:
 	* Build a cluster: Determine all points that are within double the maximum given distance using the GeoDjango spatial lookup ```distance_lte```/PostGIS function ```ST_Distance(poly, geom)```. For each of these points, determine any new points within double the maximum distance. Continue propagating until all points have been found.
