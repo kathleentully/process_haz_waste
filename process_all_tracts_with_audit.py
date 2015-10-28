@@ -67,7 +67,7 @@ nfo = {'2000':{
           'B15002_035E':'Female: Doctorate degree',
 
           'B02001_001E':'race population',
-          'B02001_002E':'White alone',
+          #'B02001_002E':'White alone',
           'B02001_003E':'Black or African American alone',
           'B02001_004E':'American Indian and Alaska Native alone',
           'B02001_005E':'Asian alone',
@@ -75,7 +75,7 @@ nfo = {'2000':{
           'B02001_007E':'Some other race alone',
           'B02001_008E':'Two or more races',
 
-          'B03002_001E':'Hispanic or Latino population',
+          #'B03002_001E':'Hispanic or Latino population',
           'B03002_012E':'Hispanic or Latino',
 
         }
@@ -179,7 +179,9 @@ def process_all_tracts():
                 'Native Hawaiian and Other Pacific Islander alone',
                 'Some other race alone',
                 'Two or more races',
+                'race population',
                 'Hispanic or Latino',
+                'Hispanic or Latino population',
                 'aggregate income',
                 'income population',
                 'mean household income',
@@ -205,6 +207,9 @@ def process_all_tracts():
                   tract_info[b][c]['percent people of color'] = (tract_info[b][c]['population'] - tract_info[b][c]['white'])/float(tract_info[b][c]['population']) if tract_info[b][c]['population']>0 else ''
 
                   tract_info[b][c]['mean household income'] = tract_info[b][c]['aggregate income']/float(tract_info[b][c]['income population']) if tract_info[b][c]['income population']>0 else ''
+
+
+                  tract_info[b][c]['Hispanic or Latino population'] = tract_info[b][c]['population']
 
                   if year == '2000':
                     #poverty
@@ -234,12 +239,14 @@ def process_all_tracts():
                     del tract_info[b][c]['Total: Hispanic or Latino: Some other race alone']
                     del tract_info[b][c]['Total: Hispanic or Latino: Two or more races']
 
+                    tract_info[b][c]['race population'] = tract_info[b][c]['population']
                   elif year == '2010':
                     #poverty
                     tract_info[b][c]['percent below poverty'] = (tract_info[b][c]['poverty .50 to .99'] + tract_info[b][c]['poverty under .50'])/float(tract_info[b][c]['poverty population']) if tract_info[b][c]['poverty population']>0 else ''
 
                     tract_info[b][c]['poverty under 1'] = (tract_info[b][c]['poverty .50 to .99'] + tract_info[b][c]['poverty under .50'])
                     del tract_info[b][c]['poverty .50 to .99']
+
 
                   del tract_info[b][c]['poverty under .50']
 
