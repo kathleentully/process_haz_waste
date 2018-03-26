@@ -3,7 +3,7 @@ Introduction
 
 This code is used to process the output of the [Social GIS](https://github.com/GK-12/SGIS-backend) REST API.
 
-Determining the polygons based on 50% areal containnment
+Determining the polygons based on 50% areal containment
 ========================================================
 
 * For each point:
